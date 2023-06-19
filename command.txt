@@ -1,0 +1,16 @@
+npm i sequelize sequelize-cli --save
+
+npm install --save mysql2
+
+npx sequelize
+
+npx sequelize init
+
+npx sequelize migration:create --name=create-table-users
+
+npx sequelize db:migrate
+
+npx sequelize seed:create --name=users-seeders
+
+npx sequelize db:seed:all
+
