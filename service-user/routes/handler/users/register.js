@@ -12,7 +12,6 @@ module.exports = async (req, res) => {
   };
 
   const validate = v.validate(req.body, schema);
-
   if (validate.length) {
     return res.status(400).json({
       status: "error",
@@ -23,7 +22,6 @@ module.exports = async (req, res) => {
   const user = await User.findOne({
     where: { email: req.body.email },
   });
-
   if (user) {
     return res.status(409).json({
       status: "error",
@@ -42,7 +40,6 @@ module.exports = async (req, res) => {
   };
 
   const createdUser = await User.create(data);
-
   return res.json({
     status: "success",
     data: {
